@@ -24,12 +24,12 @@ var rewriter: Rewriter {
 
         // Indent (whitespace)
         >>> Indenter(.init(
-            perIndent: .spaces(4),
+            perIndent: .tabs(1),
             shouldIndentSwitchCase: false,
             shouldIndentIfConfig: false,
             skipsCommentedLine: true,
-            usesXcodeStyle: true
-            ))
+            usesXcodeStyle: false
+        ))
 
         // Space (whitespace)
 //        >>> ExtraSpaceTrimmer()   // may disturb manually-aligned code
@@ -40,7 +40,7 @@ var rewriter: Rewriter {
 
         // Ignore to not distrub user-aligned multiple assignments
         // TODO: Improve multiple assignment alignment
-//        >>> EqualSpacer(spacesAround: true)
+       >>> EqualSpacer(spacesAround: true)
 
         >>> ArrowSpacer(spaceBefore: true, spaceAfter: true)
         >>> LeftBraceSpacer(spaceBefore: true)
